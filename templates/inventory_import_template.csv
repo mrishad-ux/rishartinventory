@@ -1,0 +1,22 @@
+name,category,unit,minimum_stock,unit_price,is_mayo
+SHAWARMA,shawarma_marination,Gms,0,0,0
+LB,shawarma_marination,Gms,0,0,0
+PP,shawarma_marination,Gms,0,0,0
+MEDTT,shawarma_marination,Gms,0,0,0
+ZINGER,shawarma_marination,Gms,0,0,0
+Eggless Mayo,mayo_masala_sauces,Gms,0,0,1
+LB Sauce,mayo_masala_sauces,Gms,0,0,0
+MX Sauce,mayo_masala_sauces,Gms,0,0,0
+Burger Spicy,mayo_masala_sauces,Gms,0,0,0
+Burger Sweet,mayo_masala_sauces,Gms,0,0,0
+Peri Peri Sauce,mayo_masala_sauces,Gms,0,0,0
+Peri Peri Masala,mayo_masala_sauces,Gms,0,0,0
+B Powder,mayo_masala_sauces,Gms,0,0,0
+T Powder,mayo_masala_sauces,Gms,0,0,0
+Zinger Masala,mayo_masala_sauces,Gms,0,0,0
+Zinger Powder,mayo_masala_sauces,Gms,0,0,0
+CHILLED CHKN,chicken_fish,kg,0,0,0
+FROZEN CHKN,chicken_fish,pkt,0,0,0
+FROZEN FISH,chicken_fish,kg,0,0,0
+Rumali,bun_bakery,Nos,0,0,0
+Khubz,bun_bakery,Nos,0,0,0
