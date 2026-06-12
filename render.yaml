@@ -1,0 +1,25 @@
+database:
+  name: rishart-db
+  id: dpg-d8m43v9o3t8c73bls72g-a
+
+services:
+  - type: web
+    name: rishart-inventory
+    region: singapore
+    plan: free
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: rishart-db
+          property: connectionString
+      - key: SESSION_DRIVER
+        value: database

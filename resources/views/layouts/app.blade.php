@@ -13,6 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.11.0/dist/tabler-icons.min.css">
     <style>
         /* ===== SLATE PROFESSIONAL LIGHT THEME ===== */
 
@@ -671,70 +672,70 @@
             @if(Auth::check() && in_array(Auth::user()->role, ['admin']))
             <a href="{{ route('dashboard') }}"
                class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                <span class="nav-icon">📊</span> Dashboard
+                <span class="nav-icon"><i class="ti ti-layout-dashboard"></i></span> Dashboard
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin']))
             <a href="{{ route('suppliers.index') }}"
                class="nav-item {{ request()->routeIs('suppliers.*') ? 'active' : '' }}">
-                <span class="nav-icon">🏪</span> Suppliers
+                <span class="nav-icon"><i class="ti ti-building-store"></i></span> Suppliers
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin', 'manager']))
             <a href="{{ route('inventory.daily') }}"
                class="nav-item {{ request()->routeIs('inventory*') ? 'active' : '' }}">
-                <span class="nav-icon">📦</span> Inventory
+                <span class="nav-icon"><i class="ti ti-package"></i></span> Inventory
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin', 'accounts']))
             <a href="{{ route('expenses.index') }}"
                class="nav-item {{ request()->routeIs('expenses.*') ? 'active' : '' }}">
-                <span class="nav-icon">💸</span> Expenses
+                <span class="nav-icon"><i class="ti ti-receipt"></i></span> Expenses
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin', 'accounts']))
             <a href="{{ route('payments.index') }}"
                class="nav-item {{ request()->routeIs('payments.*') ? 'active' : '' }}">
-                <span class="nav-icon">💳</span> Payments
+                <span class="nav-icon"><i class="ti ti-credit-card"></i></span> Payments
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin', 'accounts']))
             <a href="{{ route('sales.index') }}"
                class="nav-item {{ request()->routeIs('sales.*') ? 'active' : '' }}">
-                <span class="nav-icon">💰</span> Sales
+                <span class="nav-icon"><i class="ti ti-shopping-cart"></i></span> Sales
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin']))
             <a href="{{ route('staff.index') }}"
                class="nav-item {{ request()->routeIs('staff.*') ? 'active' : '' }}">
-                <span class="nav-icon">👥</span> Staff
+                <span class="nav-icon"><i class="ti ti-users"></i></span> Staff
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin']))
             <a href="{{ route('payroll.index') }}"
                class="nav-item {{ request()->routeIs('payroll.*') ? 'active' : '' }}">
-                <span class="nav-icon">💵</span> Payroll
+                <span class="nav-icon"><i class="ti ti-cash"></i></span> Payroll
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin', 'accounts']))
             <a href="{{ route('settlements.index') }}"
                class="nav-item {{ request()->routeIs('settlements.*') ? 'active' : '' }}">
-                <span class="nav-icon">🏦</span> Settlements
+                <span class="nav-icon"><i class="ti ti-building-bank"></i></span> Settlements
             </a>
             @endif
 
             @if(Auth::check() && in_array(Auth::user()->role, ['admin']))
             <a href="{{ route('backup.index') }}"
                class="nav-item {{ request()->routeIs('backup.*') ? 'active' : '' }}">
-                <span class="nav-icon">💾</span> Backup
+                <span class="nav-icon"><i class="ti ti-database"></i></span> Backup
             </a>
             @endif
         </nav>
@@ -748,7 +749,7 @@
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="logout-btn">
-                    <span class="nav-icon">🚪</span> Logout
+                    <span class="nav-icon"><i class="ti ti-logout"></i></span> Logout
                 </button>
             </form>
         </div>
