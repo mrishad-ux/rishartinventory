@@ -18,8 +18,8 @@ export default function DashboardPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:8000/api/inventory').then(r => r.json()).catch(() => []),
-      fetch('http://localhost:8000/api/inventory-oil/monthly-report').then(r => r.json()).catch(() => [])
+      fetch('/api/inventory').then(r => r.json()).catch(() => []),
+      fetch('/api/inventory-oil/monthly-report').then(r => r.json()).catch(() => [])
     ]).then(([inv, oil]) => {
       setInventory(inv)
       setOilData(oil)
