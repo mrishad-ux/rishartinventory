@@ -27,5 +27,5 @@ export function BarChart({ data }: { data: BarData[] }) {
     tooltip: { visible: true },
   }
 
-  return <VBarChart spec={spec} className="w-full h-64" />
+  return <VBarChart spec={spec as any} className="w-full h-64" />
 }
