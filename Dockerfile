@@ -1,14 +1,27 @@
-FROM node:18-alpine
+# Stage 1: Build the Next.js app
+FROM node:20-alpine AS builder
 WORKDIR /app
-ENV NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 PORT=3000
 
+# Copy only the next-dashboard subdirectory
 COPY next-dashboard/package*.json ./
 RUN npm install
 
-COPY next-dashboard/ ./
+COPY next-dashboard/. .
 RUN npm run build
 
-EXPOSE 3000
+# Stage 2: Run the Next.js app
+FROM node:20-alpine AS runner
+WORKDIR /app
 
-# Run the built Next.js server directly
-CMD ["node_modules/.bin/next", "start", "-p", "3000"]
+ENV NODE_ENV=production
+
+# Copy built output from builder
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+
+EXPOSE 3000
+ENV PORT=3000
+
+CMD ["npm", "start"]
